@@ -4,15 +4,10 @@
 
 import sys
 sys.path.append("../choose_your_own/")
-from class_vis import prettyPicture, output_image
+
 from prep_terrain_data import makeTerrainData
 
-import matplotlib.pyplot as plt
-import numpy as np
-import pylab as pl
-import shutil as shutil
 from classifyDT import classify
-from sklearn import tree
 
 features_train, labels_train, features_test, labels_test = makeTerrainData()
 
@@ -35,7 +30,7 @@ for step in range(10):
 
     print step, " ", acc
 
-### check stability
+# check stability
 if(len(values) == 1):
     print "computed successfully"
 else:
